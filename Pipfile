@@ -7,6 +7,9 @@ name = "pypi"
 django = "*"
 
 [dev-packages]
+pytest = "*"
+flake8 = "*"
+pytest-django = "*"
 
 [requires]
 python_version = "3.9"
