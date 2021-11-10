@@ -1,0 +1,39 @@
+{% load static %}
+<footer class="main-footer mt-5 pt-3 text-light">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h5 class="">O que achou do meu site?</h5>
+                <p>O codigo fonte do site pode ser visto no meu repositório <a href="https://github.com/JoaoZati/django-portifolio">github</a>.</p>
+            </div>
+            <div class="col text-center">
+                <h5>Gostou? Entre em contato!</h5>
+                <address>
+                    <img src="{% static 'img/whatsapp.png' %}" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                    +55 45 98808-9339
+                    <br/>
+                    <a href="mailto:joaozati@gmail.com" class="text-white">
+                        <img src="{% static 'img/email.png' %}" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                        joaozati@gmail.com
+                    </a>
+                </address>
+            </div>
+            <div class="col text-center">
+                <h5>Acesse meus projetos</h5>
+                <a href="https://github.com/JoaoZati">
+                    <img src="{% static 'img/github.png' %}" alt="" width="50" height="50">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="text-center rights pb-2">
+        <div class="container">
+            <div class="row">
+                <div class="col mt-3">
+                    {% now 'Y' %} João Guilherme. Todos os direitos reservados.
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
