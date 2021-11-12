@@ -54,8 +54,8 @@
     </button>
   </div>
 
-  <div class="container marketing text-center mt-5">
-    <div class="row">
+  <div class="container marketing mt-5">
+    <div class="row text-center">
       <div class="col-lg-4">
         <img src="{% static 'img/source_code_red.jpeg' %}" class="rounded-circle" alt="" width="140" height="140" />
         <h2>Linguagens</h2>
@@ -79,6 +79,60 @@
         <p style="margin:0.25;">Heroku</p>
         <p>Ferramentas de integração</p>
         <p><a class="btn btn-dark" href="#">Veja mais Detalhes &raquo;</a></p>
+      </div>
+    </div>
+
+    <hr class="featurette-divider mt-5 mb-5">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Projeto Django Devpro. <span class="text-muted">Plataforma de curso realizado no curso Dev Pro da Python Pro Brasil:</span></h2>
+        <p class="lead">Projeto django com frontend em bootstrap seguindo a metodologia TDD e boas práticas Twelve-Factor App.
+        Integração continua com Travis CI, atualização de pacotes com Pyup, testes com framework pytest, cobertura de testes com codecov e
+        verificação de erros com sentry.</p>
+        <p><a class="btn btn-dark" href="#">Veja mais Detalhes &raquo;</a></p>
+      </div>
+      <div class="col-md-5 text-center">
+        <img src="{% static 'img/pythonpro.png' %}" alt="" width="400" height="400" />
+      </div>
+    </div>
+
+    <hr class="featurette-divider mb-5">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">Biblioteca backtesting_walkfoward. <span class="text-muted">Biblioteca Python para realização de backtesting de ativos financeiros</span></h2>
+        <p class="lead">Com essa biblioteca é possível fazer backtesting e walkfoard testing de estratégias de trading
+          em ativos financeiros usando principalmente Pandas e Numpy para executar os cálculos.
+          A publicação foi feita na Pypi e pode ser usada por linha de comando. Para mais detalhes clique no botão abaixo.
+        </p>
+        <p><a class="btn btn-dark" href="#">Veja mais Detalhes &raquo;</a></p>
+      </div>
+      <div class="col-md-5 text-center">
+        <img src="{% static 'img/bitcoin.jpeg' %}" alt="" width="400" height="260" />
+      </div>
+    </div>
+
+    <hr class="featurette-divider mt-5 mb-5">
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <h5 class="card-header">
+            Quem eu sou?
+          </h5>
+          <div class="card-body">
+            <p class="card-text">
+              <img src="{% static 'img/me.jpg' %}" width="150" height="150" alt="Foto Pessoal"
+                   class="img-thumbnail float-start me-3"/>
+              <p>Olá meu nome é João Guilherme, sou formado em engenharia mecânica e trabalhei no setor por mais de dois
+                anos como projetista, atualmente decidi migrar para área de programação por acreditar que tenho muito mais
+                potêncial nessa área pois é o que eu gosto de fazer. Fiz esse portifólio para concluir meu objetivo de encontrar
+                a minha primeira vaga como programador.</p>
+              <p>Se gostou do meu trabalho ou tem alguma sugestão, por favor entre em contato.</p>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
