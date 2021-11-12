@@ -1,56 +1,86 @@
-{% extends "base/base.html" %}
+  {% extends "base/base.html" %}
 {% load static %}
 {% block title %}Python Pro - Home{% endblock %}
 {% block content %}
-<div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+<main>
+  <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'img/python_carousel.jpg' %}" style="height: 650px;" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="mb-3">Projetos e Bibliotecas em Python</h5>
+          <p>Projetos e bibliotecas postadas no Pypi envolvendo programação procedural e programação orientada a objetos.</p>
+          <p><a class="btn btn-lg btn-primary" href="#">Veja meus Projetos</a></p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'img/django_carousel.png' %}" style="height: 650px;" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="mb-3 text-white">Aplicações Django</h5>
+          <p class="text-white">Aplicações desenvolvidas com bootstrap e django com deploy no heroku.</p>
+          <p><a class="btn btn-lg btn-primary" href="#">Veja as Aplicações</a></p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'img/flask_carousel_2.jpg' %}" style="height: 650px;" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="mb-3 text-white">Aplicações Flask</h5>
+          <p class="text-white">Aplicações desenvolvidas com bootstrap e flask com deploy no heroku.</p>
+          <p><a class="btn btn-lg btn-primary" href="#">Veja as Aplicações</a></p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'img/tkinter_carousel.jpg' %}" style="height: 650px;" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="mb-3 text-white">Aplicações Desktop</h5>
+          <p class="text-white">Aplicações simples desenvolvidas para desktop utilizando tkinter e banco de dados SQL.</p>
+          <p><a class="btn btn-lg btn-primary" href="#">Veja as Aplicações</a></p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="{% static 'img/python_carousel.jpg' %}" style="height: 650px;" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5 class="mb-3">Projetos e Bibliotecas em Python</h5>
-        <p>Programação Procedural: Tipos Basicos, Desvios condicionais, containers e interação, modularização e manipulação de arquivos.</p>
-        <p>Programação Orientada a Objetos: Classes, Métodos, Atributos, Composição e Herança.</p>
-        <p><a class="btn btn-lg btn-primary" href="#">Veja meus Projetos</a></p>
+
+  <div class="container marketing text-center mt-5">
+    <div class="row">
+      <div class="col-lg-4">
+        <img src="{% static 'img/source_code_red.jpeg' %}" class="rounded-circle" alt="" width="140" height="140" />
+        <h2>Linguagens</h2>
+        <p style="margin:0.25;">Python</p>
+        <p style="margin:0.25;">SQL Básico</p>
+        <p>HTML/CSS Básico</p>
+        <p><a class="btn btn-dark" href="#">Veja mais Detalhes &raquo;</a></p>
       </div>
-    </div>
-    <div class="carousel-item">
-      <img src="{% static 'img/flask_carousel_2.jpg' %}" style="height: 650px;" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5 class="mb-3 text-white">Aplicações Flask</h5>
-        <p class="text-white">Aplicações desenvolvidas com bootstrap e flask com deploy no heroku.</p>
-        <p><a class="btn btn-lg btn-primary" href="#">Veja as Aplicações</a></p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="{% static 'img/django_carousel.png' %}" style="height: 650px;" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5 class="mb-3 text-white">Aplicações Django</h5>
-        <p class="text-white">Aplicações desenvolvidas com bootstrap e django com deploy no heroku.</p>
-        <p><a class="btn btn-lg btn-primary" href="#">Veja as Aplicações</a></p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="{% static 'img/tkinter_carousel.jpg' %}" style="height: 650px;" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5 class="mb-3 text-white">Aplicações Tkinter</h5>
-        <p class="text-white">Aplicações desenvolvidas para desktop utilizando tkinter.</p>
-        <p><a class="btn btn-lg btn-primary" href="#">Veja as Aplicações</a></p>
+      <div class="col-lg-4">
+        <img src="{% static 'img/django_circle.png' %}" class="rounded-circle" style="background-color: #21481C;" alt="" width="140" height="140" />
+        <h2>Frameworks</h2>
+        <p style="margin:0.25;">Django</p>
+        <p style="margin:0.25;">Flask</p>
+        <p>Bootstrap</p>
+        <p><a class="btn btn-dark" href="#">Veja mais Detalhes &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img src="{% static 'img/github_circle.png' %}" class="rounded-circle" alt="" width="140" height="140" />
+        <h2>Ferramentas</h2>
+        <p style="margin:0.25;">Github/Pycharm</p>
+        <p style="margin:0.25;">Heroku</p>
+        <p>Ferramentas de integração</p>
+        <p><a class="btn btn-dark" href="#">Veja mais Detalhes &raquo;</a></p>
       </div>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+</main>
 {% endblock %}
