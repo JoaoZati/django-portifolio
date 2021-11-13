@@ -1,3 +1,6 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def description(request):
+    context = {}
+    return render(request, 'skills/description.html', context)
