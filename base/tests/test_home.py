@@ -20,4 +20,3 @@ def test_carousel(resp):
 
 def test_featurette(resp):
     assert_contains(resp, '<h2 class="featurette-heading">Projeto Django Devpro.')
-
