@@ -12,7 +12,7 @@ def skill_types(db):
 
 @pytest.fixture
 def skill_types_ordered(db):
-    return [mommy.make(SkillType, title=s) for s in 'title1 title2 title3'.split()]
+    return [mommy.make(SkillType, title=s) for s in 'title3 title2 title1'.split()]
 
 
 @pytest.fixture
