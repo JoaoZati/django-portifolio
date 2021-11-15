@@ -58,12 +58,12 @@
     <div class="row text-center">
       {% for skill_type in list_skill_types %}
       <div class="col-lg-4">
-        <img src="{% static 'img/source_code_red.jpeg' %}" class="rounded-circle" alt="" width="140" height="140" />
+        <img src="{{ skill_type.static_image.url }}" class="rounded-circle" alt="" width="140" height="140" />
         <h2>{{ skill_type.title }}</h2>
         {% for skill in skill_type.skills %}
         <p style="margin:0.25;">{{ skill.title }}</p>
         {% endfor %}
-        <p><a class="btn btn-dark" href="#">Veja mais Detalhes &raquo;</a></p>
+        <p><a class="btn btn-dark" href="{% url 'skills:description' %}">Veja mais Detalhes &raquo;</a></p>
       </div>
       {% endfor %}
     </div>

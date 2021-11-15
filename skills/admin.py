@@ -5,7 +5,7 @@ from skills.models import SkillType, Skill
 
 @admin.register(SkillType)
 class SkillTypeAdmin(admin.ModelAdmin):
-    list_display = ('title',)
+    list_display = ('title', 'static_image')
 
 
 @admin.register(Skill)
