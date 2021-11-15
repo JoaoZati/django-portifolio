@@ -3,8 +3,8 @@ from django.urls import reverse
 
 
 @pytest.fixture
-def resp(client):
-    resp = client.get(reverse('applications:description', kwargs={'slug': 'abc'}))
+def resp(client, db):
+    resp = client.get(reverse('applications:project', kwargs={'slug': 'abc'}))
     return resp
 
 
