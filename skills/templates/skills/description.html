@@ -5,88 +5,27 @@
 <div class="container">
     <div class="row">
 
+        {% for skill_type in list_skill_types %}
         <div class="col-md-12 mt-5">
             <div class="card">
                 <div class="card-header">
-                    <h2>Linguagens de Programação</h2>
+                    <h2>{{ skill_type.title }}</h2>
                 </div>
                 <div class="card-body">
-                    <h3>Python</h3>
-                    </br>
-                    <p>
-                        Programação procedural: Estrutura de dados (int, float, booleano, variável e atribuição),
-                        desvios condicionais (if/elif/else, operadores lógicos), containers e interações (string, listas, dicionarios,
-                        tuplas, empacotamento/desempacotamento, acesso, tamanho e fatiamento de interaveis, while, for...),
-                        modularização (importar/criar modulo, docstring, funções, pep8...). Programação orientada a objetos:
-                        classe, composição, atributos de dados, atributos complexos, atributos dinâmicos, atributos de classe, metodos,
-                        metodos de classe, composição, herança, sobrescrita de atributo, sobrescrita de método, metodo protegido,
-                        método estático e decoradores.
-                    </p>
-
+                    {% for skill in skill_type.skills %}
+                    {% if forloop.counter0 != 0 %}
                     <hr class="featurette-divider mt-5 mb-5">
-
-                    <h3>HTML e CSS</h3>
+                    {% endif %}
+                    <h3>{{ skill.title }}</h3>
                     </br>
                     <p>
-                        Criar a interface das páginas de aplicações com html, estilizar as interfaces com css. Utilizar
-                        o framework bootstrap para deixar as paginas responsivas. Editar as variáveis do html com o template
-                        do django ou do flask e criar funcionalidades e conectando com o banco de dados.
+                        {{ skill.content }}
                     </p>
-
-                    <hr class="featurette-divider mt-5 mb-5">
-
-                    <h3>SQL e banco de dados</h3>
-                    </br>
-                    <p>
-                        Criar banco de dados sql ou postgresql, realizar CRUD utilizando orm do django ou sqlalchemy do flask,
-                        realizar criar, ler, atualizar e deletar dados de tabelas como sqlite ou postgresql por meio de comandos
-                        como: CREATE, INSERT, SELECT e UPDATE.
-                    </p>
+                    {% endfor %}
                 </div>
             </div>
         </div>
-
-        <div class="col-md-12 mt-5">
-            <div class="card">
-                <div class="card-header">
-                    <h2>Frameworks</h2>
-                </div>
-                <div class="card-body">
-                    <h3>Django</h3>
-                    </br>
-                    <p>
-                        Criar o back-end de aplicações. Criar caminhos de urls para lidar com requests e response.
-                        Conectar e editar dados com o banco de dados utilizando o orm do django,
-                        criar modelos e realizar relações One to One, Many to One e Many to Many.
-                        Criar uma interface no admin do django para editar o usuário editar os valores.
-                        Editar variáveis do html por meio do tamplate do django, pegar os dados do usuário por meio de forms.
-                        Realizar testes e criar aplicativos seguindo o TDD com o framework pytest.
-                        Realizar o deploy da aplicação no heroku insolando as variáveis de ambiente e as variáveis de produção.
-                    </p>
-
-                    <hr class="featurette-divider mt-5 mb-5">
-
-                    <h3>Flask</h3>
-                    </br>
-                    <p>
-                        Criar o back-end de aplicações. Criar caminhos de urls para lidar com requests e response.
-                        Conectar e editar dados com o banco de dados utilizando o sqlalchemy,
-                        criar modelos e realizar relações One to One, Many to One.
-                        Editar variáveis do html por meio do tamplate do jinja2, pegar os dados do usuário por meio de forms.
-                        Realizar testes e criar aplicativos seguindo o TDD com o framework pytest.
-                        Realizar o deploy da aplicação no heroku insolando as variáveis de ambiente e as variáveis de produção.
-                    </p>
-
-                    <hr class="featurette-divider mt-5 mb-5">
-
-                    <h3>Bootstrap</h3>
-                    </br>
-                    <p>
-                        Criar páginas responsivas utilizando HTML e CSS.
-                    </p>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
 
     </div>
 </div>

@@ -9,5 +9,5 @@ class SkillTypeAdmin(admin.ModelAdmin):
 
 
 @admin.register(Skill)
-class SkillTypeAdmin(admin.ModelAdmin):
+class SkillAdmin(admin.ModelAdmin):
     list_display = ('title', 'content', 'type')
