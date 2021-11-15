@@ -1,0 +1,32 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block title %}Portifolio - Home{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+
+        {% for skill_type in list_skill_types %}
+        <div class="col-md-12 mt-5">
+            <div class="card">
+                <div class="card-header">
+                    <h2>{{ skill_type.title }}</h2>
+                </div>
+                <div class="card-body">
+                    {% for skill in skill_type.skills %}
+                    {% if forloop.counter0 != 0 %}
+                    <hr class="featurette-divider mt-5 mb-5">
+                    {% endif %}
+                    <h3>{{ skill.title }}</h3>
+                    </br>
+                    <p>
+                        {{ skill.content }}
+                    </p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+{% endblock %}
