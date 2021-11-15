@@ -56,16 +56,30 @@
 
   <div class="container marketing mt-5">
     <div class="row text-center">
-      {% for skill_type in list_skill_types %}
       <div class="col-lg-4">
         <img src="{% static 'img/source_code_red.jpeg' %}" class="rounded-circle" alt="" width="140" height="140" />
-        <h2>{{ skill_type.title }}</h2>
-        {% for skill in skill_type.skills %}
-        <p style="margin:0.25;">{{ skill.title }}</p>
-        {% endfor %}
+        <h2>Linguagens</h2>
+        <p style="margin:0.25;">Python</p>
+        <p style="margin:0.25;">SQL Básico</p>
+        <p>HTML/CSS Básico</p>
         <p><a class="btn btn-dark" href="#">Veja mais Detalhes &raquo;</a></p>
       </div>
-      {% endfor %}
+      <div class="col-lg-4">
+        <img src="{% static 'img/django_circle.png' %}" class="rounded-circle" style="background-color: #21481C;" alt="" width="140" height="140" />
+        <h2>Frameworks</h2>
+        <p style="margin:0.25;">Django</p>
+        <p style="margin:0.25;">Flask</p>
+        <p>Bootstrap</p>
+        <p><a class="btn btn-dark" href="#">Veja mais Detalhes &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img src="{% static 'img/github_circle.png' %}" class="rounded-circle" alt="" width="140" height="140" />
+        <h2>Ferramentas</h2>
+        <p style="margin:0.25;">Github/Pycharm</p>
+        <p style="margin:0.25;">Heroku</p>
+        <p>Ferramentas de integração</p>
+        <p><a class="btn btn-dark" href="#">Veja mais Detalhes &raquo;</a></p>
+      </div>
     </div>
 
     <hr class="featurette-divider mt-5 mb-5">
