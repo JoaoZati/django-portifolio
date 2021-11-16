@@ -14,5 +14,8 @@ def description(request, slug):
 
 
 def project(request, slug):
-    context = {}
+    application = facade.find_application(slug)
+    context = {
+        'application': application,
+    }
     return render(request, 'applications/project.html', context)

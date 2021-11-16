@@ -17,3 +17,7 @@ def find_application_type(slug):
 
 def find_application_from_type(application_type):
     return list(application_type.application_set.order_by('order').all())
+
+
+def find_application(slug):
+    return Application.objects.get(slug=slug)
