@@ -9,3 +9,11 @@ def list_applicationtype():
             Prefetch('application_set', queryset=ordered_application, to_attr='applications')
         ).all()
     )
+
+
+def find_application_type(slug):
+    return ApplicationType.objects.get(slug=slug)
+
+
+def find_application_from_type(application_type):
+    return list(application_type.application_set.order_by('order').all())

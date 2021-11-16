@@ -7,10 +7,10 @@
 <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="{% static 'img/python_carousel.jpg' %}" style="height: 550px;" class="d-block w-100" alt="...">
+            <img src="{{ application_type.img.url }}" style="height: 550px;" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-                <h5 class="mb-3">Projetos e Bibliotecas em Python</h5>
-                <p>Projetos e bibliotecas postadas no Pypi envolvendo programação procedural e programação orientada a objetos.</p>
+                <h5 class="mb-3 text-white">{{ application_type.title }}</h5>
+                <p class="text-white">{{ application_type.description }}</p>
             </div>
         </div>
     </div>
@@ -24,34 +24,21 @@
         <div class="col-md-12 mt-5">
             <div class="card">
                 <div class="card-header">
-                    <h2>Projetos e Bibliotecas em Python</h2>
+                    <h2>{{ application_type.title }}</h2>
                 </div>
                 <div class="card-body">
-                    <h4>backtesting-walkfoward</h4>
-                    <p>
-                        Backtesting é uma etapa fundamental para criação de estratégias de trading lucrativas a longo prazo.
-                        Para simplificar a criação de backtesting a backtesting-walfoward é uma biblioteca python que auxilia
-                        na criação de backtesting sobre data de ativos financeiros. Ela também faz walkfoward testing na qual
-                        se trata de vários backtestings em etapas. Esse projeto mostra bem a aplicação de OOP do python para
-                        resolver um problema real e complexo. Para rodar e entender como usar a biblioteca basta abrir o repositório
-                        no github e seguir o read-me. Qualquer dúvida ou sujestão de melhoria por favor entre em contato.
-                    </p>
-                    <p>Link da Aplicação Online: <a href="#">#</a></p>
-                    <p>Link do Repositório do github: <a href="https://github.com/JoaoZati/backtesting_walkfoward">https://github.com/JoaoZati/backtesting_walkfoward</a></p>
-                    <p><a class="btn btn-dark" href="#">Pagina do App &raquo;</a></p>
-
+                    {% for app in applications %}
+                    {% if forloop.counter0 != 0 %}
                     <hr class="featurette-divider mt-5 mb-5">
-
-                    <h4>Python Birds</h4>
-                    <p>
-                        Python Birds um jogo simplificado do Angry Birds feita em python utilizando o tkinter como placa gráfica.
-                        O objetivo dele é ensinar os programadores conceitos de orientação a objetos e como utilizar o github na prática.
-                        Para isso o desenvolvedor deve fazer um fork do repositório original e aos poucos ir implementando
-                        as funcionalidades seguindo os testes existentes e ir realizando os commits.
-                    </p>
-                    <p>Link da Aplicação Online: <a href="#">#</a></p>
-                    <p>Link do Repositório do github: <a href="https://github.com/JoaoZati/pythonbirds">https://github.com/JoaoZati/pythonbirds</a></p>
-                    <p><a class="btn btn-dark" href="#">Pagina do App &raquo;</a></p>
+                    {% endif %}
+                    <h4>{{app.title}}</h4>
+                    <p>{{ app.content }}</p>
+                    {% if app.link_site != '#' %}
+                    <p>Link da Aplicação Online: <a href="{{ app.link_site }}">{{ app.link_site }}</a></p>
+                    {% endif %}
+                    <p>Link do Repositório do github: <a href="{{ app.link_github }}">{{ app.link_github }}</a></p>
+                    <p><a class="btn btn-dark" href="{{ app.get_absolute_url }}">Pagina do App &raquo;</a></p>
+                    {% endfor %}
                 </div>
             </div>
         </div>
