@@ -28,11 +28,12 @@ def application(application_type):
 
 
 @pytest.fixture
-def front_apps(db):
+def front_apps(application):
     return mommy.make(
         FrontApp,
         2,
-        img=SimpleUploadedFile('small.gif', small_gif, content_type='image/gif')
+        img=SimpleUploadedFile('small.gif', small_gif, content_type='image/gif'),
+        application=application,
     )
 
 

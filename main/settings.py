@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'skills',
     'applications',
     'ordered_model',
+    'frontapps',
 ]
 
 MIDDLEWARE = [
