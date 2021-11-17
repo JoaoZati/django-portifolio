@@ -22,7 +22,8 @@ class Migration(migrations.Migration):
                 ('subtitle', models.TextField(blank=True)),
                 ('content', models.TextField()),
                 ('img', models.ImageField(upload_to='images')),
-                ('application', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='applications.application')),
+                ('application', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
+                                                  to='applications.application')),
             ],
             options={
                 'ordering': ('order',),
