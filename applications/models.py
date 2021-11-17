@@ -1,6 +1,6 @@
-from django.db import models # noqa
-from ordered_model.models import OrderedModel # noqa
-from django.urls import reverse # noqa
+from django.db import models
+from ordered_model.models import OrderedModel
+from django.urls import reverse
 
 
 class ApplicationType(OrderedModel):

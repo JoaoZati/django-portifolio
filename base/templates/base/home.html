@@ -60,36 +60,20 @@
       {% endfor %}
     </div>
 
+    {% for front_app in list_front_apps %}
     <hr class="featurette-divider mt-5 mb-5">
 
     <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">Projeto Django Devpro. <span class="text-muted">Plataforma de curso realizado no curso Dev Pro da Python Pro Brasil:</span></h2>
-        <p class="lead">Projeto django com frontend em bootstrap seguindo a metodologia TDD e boas práticas Twelve-Factor App.
-        Integração continua com Travis CI, atualização de pacotes com Pyup, testes com framework pytest, cobertura de testes com codecov e
-        verificação de erros com sentry. Possui relações One to One, Many to One e Many to Many.</p>
-        <p><a class="btn btn-dark" href="#">Veja mais Detalhes &raquo;</a></p>
+      <div class="{% cycle  'col-md-7' 'col-md-7 order-md-2' %}">
+        <h2 class="featurette-heading">{{ front_app.title }} <span class="text-muted">{{ front_app.subtitle }}</span></h2>
+        <p class="lead">{{ front_app.content }}</p>
+        <p><a class="btn btn-dark" href="{{ front_app.application.get_absolute_url }}">Veja mais Detalhes &raquo;</a></p>
       </div>
       <div class="col-md-5 text-center">
-        <img src="{% static 'img/pythonpro.png' %}" alt="" width="400" height="400" />
+        <img src="{{ front_app.img.url }}" alt="" width="400" height="300" />
       </div>
     </div>
-
-    <hr class="featurette-divider mb-5">
-
-    <div class="row featurette">
-      <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading">Biblioteca backtesting_walkfoward. <span class="text-muted">Biblioteca Python para realização de backtesting de ativos financeiros</span></h2>
-        <p class="lead">Com essa biblioteca é possível fazer backtesting e walkfoard testing de estratégias de trading
-          em ativos financeiros usando principalmente Pandas e Numpy para executar os cálculos.
-          A publicação foi feita na Pypi e pode ser usada por linha de comando. Para mais detalhes clique no botão abaixo.
-        </p>
-        <p><a class="btn btn-dark" href="#">Veja mais Detalhes &raquo;</a></p>
-      </div>
-      <div class="col-md-5 text-center">
-        <img src="{% static 'img/bitcoin.jpeg' %}" alt="" width="400" height="260" />
-      </div>
-    </div>
+    {% endfor %}
 
     <hr class="featurette-divider mt-5 mb-5">
 
