@@ -15,7 +15,7 @@ def test_status_code(resp):
 
 
 def test_carousel(resp):
-    assert_contains(resp, '<img src="/static/img/python_carousel.jpg"')
+    assert_contains(resp, '<div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="carousel">')
 
 
 def test_featurette(resp):

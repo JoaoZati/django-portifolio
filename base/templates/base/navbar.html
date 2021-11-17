@@ -10,7 +10,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
             <ul class="navbar-nav">
-                {% for app_type in list_application_dropdown %}
+                {% for app_type in APPLICATION_TYPES %}
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{ app_type.title }}
