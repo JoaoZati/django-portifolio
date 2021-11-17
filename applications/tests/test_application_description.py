@@ -37,7 +37,7 @@ def test_status_code(resp):
 
 
 def test_application_type_title(resp, application_type):
-    assert_contains(resp, application_type.title)
+    assert_contains(resp, f'<h2>{application_type.title}</h2>')
 
 
 def test_application_type_description(resp, application_type):
@@ -50,7 +50,7 @@ def test_application_type_img(resp, application_type):
 
 def test_applications_title(resp, applications):
     for app in applications:
-        assert_contains(resp, app.title)
+        assert_contains(resp, f'<h4>{app.title}</h4>')
 
 
 def test_applications_content(resp, applications):
@@ -70,4 +70,4 @@ def test_applications_link_site(resp, applications):
 
 def test_applications_get_absolute_url(resp, applications):
     for app in applications:
-        assert_contains(resp, app.get_absolute_url())
+        assert_contains(resp, f'<p><a class="btn btn-dark" href="{app.get_absolute_url()}"')

@@ -37,11 +37,11 @@ def test_status_code(resp):
 
 
 def test_application_title(resp, application):
-    assert_contains(resp, application.title)
+    assert_contains(resp, f'<h2>{application.title}</h2')
 
 
 def test_application_url_father(resp, application, application_type):
-    assert_contains(resp, application_type.get_absolute_url())
+    assert_contains(resp, f'<h4>Categoria: <a href="{application_type.get_absolute_url()}"')
 
 
 def test_application_content(resp, application):

@@ -58,3 +58,23 @@ def test_applications_type_url(resp, application_types):
 def test_applications_type_image(resp, application_types):
     for app in application_types:
         assert_contains(resp, app.img.url)
+
+
+def test_applications_type_navbar_title(resp, application_types):
+    for app in application_types:
+        assert_contains(resp, f'>{app.title}</a>')
+
+
+def test_applications_type_navbar_url(resp, application_types):
+    for app in application_types:
+        assert_contains(resp, f'<a class="nav-link dropdown-toggle" href="{app.get_absolute_url()}"')
+
+
+def test_applications_navbar_title(resp, applications):
+    for app in applications:
+        assert_contains(resp, f'>{app.title}</a>')
+
+
+def test_applications_navbar_url(resp, applications):
+    for app in applications:
+        assert_contains(resp, f'<li><a class="dropdown-item" href="{app.get_absolute_url()}">')
