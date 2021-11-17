@@ -1,0 +1,29 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block title %}Portifolio - Home{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-12 mt-5">
+            <div class="card">
+                <div class="card-header">
+                    <h2>{{ application.title }}</h2>
+                </div>
+                <div class="card-body">
+                    </br>
+                    <h4>Categoria: <a href="{{ application.application_type.get_absolute_url }}">{{ application.application_type.title }}</a></h4>
+                    </br>
+                    <p>{{ application.content }}</p>
+                    </br>
+                    {% if application.application_type.online_app %}
+                    <p>Link da Aplicação Online: <a href="{{ application.link_site }}">{{application.link_site}}</a></p>
+                    {% endif %}
+                    <p>Link do Repositório do github: <a href="{{application.link_github}}">{{application.link_github}}</a></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

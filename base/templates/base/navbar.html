@@ -10,16 +10,18 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
             <ul class="navbar-nav">
+                {% for app_type in APPLICATION_TYPES %}
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown
+                        {{ app_type.title }}
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        {% for app in app_type.applications %}
+                        <li><a class="dropdown-item" href="{{ app.get_absolute_url }}">{{ app.title }}</a></li>
+                        {% endfor %}
                     </ul>
                 </li>
+                {% endfor %}
             </ul>
         </div>
     </div>

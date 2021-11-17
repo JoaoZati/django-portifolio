@@ -1,0 +1,48 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block title %}Portifolio - Home{% endblock %}
+{% block content %}
+
+
+<div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{{ application_type.img.url }}" style="height: 550px;" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5 class="mb-3 text-white">{{ application_type.title }}</h5>
+                <p class="text-white">{{ application_type.description }}</p>
+            </div>
+        </div>
+    </div>
+    </button>
+</div>
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-12 mt-5">
+            <div class="card">
+                <div class="card-header">
+                    <h2>{{ application_type.title }}</h2>
+                </div>
+                <div class="card-body">
+                    {% for app in applications %}
+                    {% if forloop.counter0 != 0 %}
+                    <hr class="featurette-divider mt-5 mb-5">
+                    {% endif %}
+                    <h4>{{app.title}}</h4>
+                    <p>{{ app.content }}</p>
+                    {% if app.link_site != '#' %}
+                    <p>Link da Aplicação Online: <a href="{{ app.link_site }}">{{ app.link_site }}</a></p>
+                    {% endif %}
+                    <p>Link do Repositório do github: <a href="{{ app.link_github }}">{{ app.link_github }}</a></p>
+                    <p><a class="btn btn-dark" href="{{ app.get_absolute_url }}">Pagina do App &raquo;</a></p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
