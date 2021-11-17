@@ -16,7 +16,7 @@
                     </br>
                     <p>{{ application.content }}</p>
                     </br>
-                    {% if application.link_site != '#' %}
+                    {% if application.application_type.online_app %}
                     <p>Link da Aplicação Online: <a href="{{ application.link_site }}">{{application.link_site}}</a></p>
                     {% endif %}
                     <p>Link do Repositório do github: <a href="{{application.link_github}}">{{application.link_github}}</a></p>
