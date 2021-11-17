@@ -43,3 +43,18 @@ def test_home_status_code(resp):
 def test_applications_type_title(resp, application_types):
     for app in application_types:
         assert_contains(resp, app.title)
+
+
+def test_applications_type_description(resp, application_types):
+    for app in application_types:
+        assert_contains(resp, app.description)
+
+
+def test_applications_type_url(resp, application_types):
+    for app in application_types:
+        assert_contains(resp, app.get_absolute_url())
+
+
+def test_applications_type_image(resp, application_types):
+    for app in application_types:
+        assert_contains(resp, app.img.url)
