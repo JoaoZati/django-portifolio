@@ -12,6 +12,8 @@ django-heroku = "*"
 dj-database-url = "*"
 python-decouple = "*"
 psycopg2-binary = "*"
+django-cloudinary-storage = "*"
+cloudinary = "*"
 
 [dev-packages]
 pytest = "*"
